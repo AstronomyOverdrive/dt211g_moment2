@@ -2,7 +2,12 @@
 
 // Declare variables
 let scheduleData;
+let reverseSort = false;
+let lastSort;
 const tableBody = document.getElementById("table");
+const sortCode = document.getElementById("sortCode");
+const sortName = document.getElementById("sortName");
+const sortProg = document.getElementById("sortProg");
 
 // Declare functions
 async function getJSON(){
@@ -19,7 +24,7 @@ async function getJSON(){
     }
 }
 
-function populateTable(data){
+function populateTable(data){ // Write to DOM
     let tableHTML = "";
     data.forEach(course => {
         tableHTML +=
@@ -32,5 +37,36 @@ function populateTable(data){
     tableBody.innerHTML = tableHTML;
 }
 
+function sortData(sortBy){
+    let sortedData = [].concat(scheduleData); // Concat prevents .sort from changing scheduleData
+    if (sortBy === lastSort){
+        reverseSort = !reverseSort; // Toggle sorting direction
+    } else {
+        reverseSort = false;
+    }
+    lastSort = sortBy;
+    switch (sortBy){ // Sort after desired attribute
+        case 1:
+            sortedData.sort((a, b) => a.code > b.code ? 1 : -1);
+            break;
+        case 2:
+            sortedData.sort((a, b) => a.coursename > b.coursename ? 1 : -1);
+            break;
+        case 3:
+            sortedData.sort((a, b) => a.progression > b.progression ? 1 : -1);
+            break;
+        default:
+            sortedData.sort((a, b) => a.code > b.code ? 1 : -1);
+    }
+    if (reverseSort){
+        populateTable(sortedData.reverse());
+    } else {
+        populateTable(sortedData);
+    }
+}
+
 // Event handlers
 addEventListener("load", getJSON);
+sortCode.addEventListener("click", () => sortData(1));
+sortName.addEventListener("click", () => sortData(2));
+sortProg.addEventListener("click", () => sortData(3));
