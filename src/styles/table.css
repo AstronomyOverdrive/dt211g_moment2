@@ -3,6 +3,7 @@ table {
     font-family: monospace;
     font-size: 1rem;
     background: black;
+    width: 100%;
 }
 table a {
     color: deepskyblue;
