@@ -23,6 +23,17 @@ header h1 {
 main {
     padding-bottom: 3rem; /* Leave space for footer */
 }
+#container {
+    display: inline-block; /* Reduces width to match contents */
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0); /* Center element */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+#searchBar {
+    margin-bottom: 1rem;
+}
 
 footer { /* Position footer at bottom */
     position: absolute;

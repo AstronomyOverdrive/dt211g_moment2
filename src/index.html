@@ -13,21 +13,25 @@
         </header>
 
         <main>
-            <table>
-                <thead>
-                    <tr>
-                        <th id="sortCode">Kurskod</th>
-                        <th id="sortName">Kursnamn</th>
-                        <th id="sortProg">Progression</th>
-                    </tr>
-                </thead>
-                <tbody id="table"></tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3">Ramschema - Webbutveckling HT24</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div id="container">
+                <label for="searchBar">Sök efter kurskod eller kursnamn: </label>
+                <input type="text" id="searchBar" placeholder="T.ex dt211g">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="sortCode">Kurskod</th>
+                            <th id="sortName">Kursnamn</th>
+                            <th id="sortProg">Progression</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Ramschema - Webbutveckling HT24</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </main>
 
         <footer>
