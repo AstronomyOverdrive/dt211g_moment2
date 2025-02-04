@@ -1,5 +1,0 @@
-!function(){let e,t;let n=!1,r=document.getElementById("table"),o=document.getElementById("sortCode"),s=document.getElementById("sortName"),d=document.getElementById("sortProg");function c(e){let t="";e.forEach(e=>{t+=`<tr>
-            <td><a target="_blank" href="${e.syllabus}">${e.code}</a></td>
-            <td>${e.coursename}</td>
-            <td>${e.progression}</td>
-        </tr>`}),r.innerHTML=t}function a(r){let o=[].concat(e);switch(n=r===t&&!n,t=r,r){case 1:default:o.sort((e,t)=>e.code>t.code?1:-1);break;case 2:o.sort((e,t)=>e.coursename>t.coursename?1:-1);break;case 3:o.sort((e,t)=>e.progression>t.progression?1:-1)}n?c(o.reverse()):c(o)}addEventListener("load",async function(){try{let t=await fetch("https://webbutveckling.miun.se/files/ramschema_ht24.json");if(!t.ok)throw Error("Invalid response!");e=await t.json(),c(e)}catch(e){console.error(e),r.innerHTML="<tr><td>Ett</td><td>Problem</td><td>Uppstod!</td></tr>"}}),o.addEventListener("click",()=>a(1)),s.addEventListener("click",()=>a(2)),d.addEventListener("click",()=>a(3))}();

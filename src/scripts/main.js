@@ -8,6 +8,7 @@ const tableBody = document.getElementById("table");
 const sortCode = document.getElementById("sortCode");
 const sortName = document.getElementById("sortName");
 const sortProg = document.getElementById("sortProg");
+const searchBar = document.getElementById("searchBar");
 
 // Declare functions
 async function getJSON(){
@@ -65,8 +66,15 @@ function sortData(sortBy){
     }
 }
 
+function filterData(){
+    const searchFor = searchBar.value.toLowerCase(); // User input in lowercase
+    const filteredData = scheduleData.filter(course => course.code.toLowerCase().includes(searchFor) || course.coursename.toLowerCase().includes(searchFor));
+    populateTable(filteredData);
+}
+
 // Event handlers
 addEventListener("load", getJSON);
 sortCode.addEventListener("click", () => sortData(1));
 sortName.addEventListener("click", () => sortData(2));
 sortProg.addEventListener("click", () => sortData(3));
+searchBar.addEventListener("keyup", filterData);
