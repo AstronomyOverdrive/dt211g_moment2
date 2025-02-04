@@ -1,1 +1,25 @@
+table {
+    color: white;
+    font-family: monospace;
+    font-size: 1rem;
+    background: black;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0); /* Center element */
+    top: 2rem;
+}
+table a {
+    color: deepskyblue;
+}
 
+tbody {
+    background: dimgrey;
+}
+tbody > tr:hover { /* Highlight hovered row for better readability */
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+}
+td, th {
+    padding: 0.5rem;
+}
