@@ -1,0 +1,50 @@
+body {
+    position: relative; /* Allows footer to be absolute relative to body */
+    min-height: 100vh; /* Used to keep footer at bottom of document */
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    background: #6106F9;
+    text-align: center;
+}
+header a { /* Style header links as normal text */
+    color: white;
+    text-decoration: none;
+}
+header h1 {
+    position: relative;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+main {
+    padding-bottom: 3rem; /* Leave space for footer */
+}
+
+footer { /* Position footer at bottom */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #6106F9;
+    height: 3rem;
+    color: white;
+}
+footer > div { /* Vertically center footer text */
+    margin-top: 1rem;
+}
+
+/* Responsive design */
+@media only screen and (min-width: 600px) { /* For viewports over 600px */
+    header h1 {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 600px) { /* For viewports under 600px */
+    header h1 {
+        font-size: 1.7rem;
+    }
+}
