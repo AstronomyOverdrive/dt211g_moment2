@@ -6,7 +6,8 @@ table {
     position: relative;
     left: 50%;
     transform: translate(-50%, 0); /* Center element */
-    top: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 table a {
     color: deepskyblue;
